@@ -22,9 +22,9 @@ contract Company {
         return employeeToHoursWorked[_employee];
     }
 
-    function logHour(uint _hour) public {
-        require(isEmployee[msg.sender],"Log Failed, Not an Employee");
-        employeeToHoursWorked[msg.sender] += _hour;
+    function logHour(address _employeem, uint _hour) public {
+        require(isEmployee[_employeem],"Log Failed, Not an Employee");
+        employeeToHoursWorked[_employeem] += _hour;
     }
     
 }
